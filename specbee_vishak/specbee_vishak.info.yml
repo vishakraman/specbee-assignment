@@ -1,0 +1,9 @@
+name: Specbee Vishak
+description: Assessment module.
+package: Custom Specbee
+type: module
+Version: 1.0
+core: 8.x
+dependencies:
+- node
+- block

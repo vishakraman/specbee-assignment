@@ -1,0 +1,3 @@
+services:
+ specbee_vishak.timezone_calc:
+   class: Drupal\specbee_vishak\TimezoneService
