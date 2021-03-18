@@ -1,25 +1,30 @@
 <?php
-
 /**
-* @file providing the service that convert timezone into time'.
-*
-*/
+ * @file providing the service that convert timezone into time'.
+ *
+ */
 
-namespace  Drupal\specbee_vishak;
+namespace Drupal\specbee_vishak;
 
-class TimezoneService {
+class TimezoneService
+{
 
- public function getTimeZone(){
+    public function getTimeZone()
+    {
 
-   //Getting our custom form timezone config value
- 	$config = \Drupal::config('timezone.adminsettings');
- 	$timezone = $config->get('timezone');
- 	$city = $config->get('city');
+        //Getting our custom form timezone config value
+        $config = \Drupal::config('timezone.adminsettings');
+        $timezone = $config->get('timezone');
+        $city = $config->get('city');
 
- 	//Calculating the time based on timezone
- 	date_default_timezone_set($timezone);
-    $date = date('d-m-Y h:i a') ;
+        //Calculating the time based on timezone
+        date_default_timezone_set($timezone);
+        $date = date('dS F Y \-\ h:i A');
 
-    return array($date, $city);
- }
+        return array(
+            $date,
+            $city
+        );
+    }
 }
+
